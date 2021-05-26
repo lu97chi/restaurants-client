@@ -1,18 +1,27 @@
 language: node_js
 node_js:
   - 12
-cache:
-  directories:
-    - node_modules
-script:
-  - npm run eslint
-  - npm run test
-before_deploy:
-  - npm install netlify-cli -g
-  - npm run build
-deploy:
-  - provider: script
-    edge: true
-    script: netlify deploy --dir=build --prod
-    on:
-      branch: master
+stages:
+  - test
+  - build
+  - name: deploy-dev
+    if: branch = development
+  - name: deploy-pro
+    if: branch = master
+
+jobs:
+  include:
+    - script: npm run test
+
+    - stage: build
+      script: npm run build
+
+    - stage: deploy-dev
+      before_script: npm install netlify-cli -g
+      script: netlify deploy --dir=build --message="$TRAVIS_COMMIT_MESSAGE"
+
+    - stage: deploy-pro
+      before_script: npm install netlify-cli -g
+      script: 
+        - npm run build # example
+        - netlify deploy --prod --dir=build --message="$TRAVIS_COMMIT_MESSAGE"

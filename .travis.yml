@@ -13,11 +13,6 @@ before_deploy:
 deploy:
   - provider: script
     edge: true
-    script: netlify deploy --dir=dist --prod
+    script: netlify deploy --dir=build --prod
     on:
       branch: master
-  - provider: script
-    edge: true
-    script: netlify deploy --dir=dist --prod
-    on:
-      branch: development 

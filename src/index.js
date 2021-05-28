@@ -1,11 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
+import { BrowserRouter } from "react-router-dom";
+
+const client = new ApolloClient({
+  uri: "https://graphql-demo-py.herokuapp.com/",
+  cache: new InMemoryCache(),
+});
 import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

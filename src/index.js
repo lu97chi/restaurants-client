@@ -5,7 +5,7 @@ import { ApolloProvider } from "@apollo/client/react";
 import { BrowserRouter } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: "https://graphql-demo-py.herokuapp.com/",
+  uri: "https://48p1r2roz4.sse.codesandbox.io",
   cache: new InMemoryCache(),
 });
 import "./index.css";

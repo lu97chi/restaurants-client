@@ -22,7 +22,7 @@ const Hero = () => (
     >
       <Interaction>
         <Welcome>Welcome to</Welcome>
-        <Brand>LA MESA</Brand>
+        <Brand>LA UAS</Brand>
         <LabelBrand>{`Welcome to la mes here is some data`}</LabelBrand>
         <LabelBrand>{`Welcome to la mes here is some data`}</LabelBrand>
         <Button className="shadow-lg">Button</Button>

@@ -4,7 +4,7 @@ import React from "react";
 const Currency = ({ name, rate, currency }) => (
   <div
     id="app"
-    style={{ width: "50%", margin: "0 auto" }}
+    style={{ width: "50%", margin: "32px auto" }}
     className="bg-white w-128 h-60 rounded shadow-md flex card text-grey-darkest"
   >
     <img

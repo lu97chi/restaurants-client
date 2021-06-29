@@ -3,5 +3,6 @@
   "author": "Zendesk",
   "version": "2.9.0",
   "api_version": 2,
-  "default_locale": "en-us"
+  "default_locale": "en-us",
+  "settings": []
 }

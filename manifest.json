@@ -1,10 +1,6 @@
 {
   "name": "Garden Sample App",
-  "author": {
-    "name": "Luis",
-    "email": "lu97is@gmail.com",
-    "url": "https://help.zendesk.com"
-  },
+  "author": "luis",
   "defaultLocale": "en",
   "private": true,
   "version": "1.0",
